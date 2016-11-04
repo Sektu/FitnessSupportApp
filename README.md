@@ -9,3 +9,11 @@ Harmonogram pracy nad projektem:
 - dodawanie nowego cwiczenia do planu
 - szyfrowanie danych np. hasel uzytkownikow w bazie
 - testy jednostkowe
+
+# Deployment
+
+Najnowsza wersja aplikacji będzie deployowana tutaj:
+- https://fitnesssupportapp.herokuapp.com/
+
+# How to Deploy:
+- https://dashboard.heroku.com/apps/fitnesssupportapp/deploy/heroku-git
