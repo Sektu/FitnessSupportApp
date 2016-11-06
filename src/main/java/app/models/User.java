@@ -1,99 +1,85 @@
 package app.models;
 
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "USER")
 public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    
     private long id;
-    
-    @NotNull
     private String email;
-    
-    @NotNull
     private String password;
-   
-    private String firstname;
-    private String lastname;
-    private Double weight;
-    private Integer height;
+    private UserInfo userInfo;
+    private Set<TrainingPlan> trainingPlans;
 
     public User() {
     }
-
+    
     public User(long id) {
         this.id = id;
     }
-
+    
     public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public long getId() {
         return id;
     }
 
-    public void setId(long value) {
-        this.id = value;
+    public void setId(long id) {
+        this.id = id;
     }
 
+    @NotNull
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String value) {
-        this.email = value;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
+    @NotNull
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
-    } 
-
-    public String getFirstname() {
-        return firstname;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    public UserInfo getUserInfo() {
+        return userInfo;
     }
 
-    public String getLastname() {
-        return lastname;
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    @OneToMany(mappedBy = "user")
+    public Set<TrainingPlan> getTrainingPlans() {
+        return trainingPlans;
     }
 
-    public Double getWeight() {
-        return weight;
+    public void setTrainingPlans(Set<TrainingPlan> trainingPlans) {
+        this.trainingPlans = trainingPlans;
     }
 
-    public void setWeight(Double weight) {
-        this.weight = weight;
-    }
-
-    public Integer getHeight() {
-        return height;
-    }
-
-    public void setHeight(Integer height) {
-        this.height = height;
-    }
     
-    
-
 }
