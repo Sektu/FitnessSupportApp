@@ -8,52 +8,92 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "users")
+@Table(name = "USERS")
 public class User {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
-  
-  @NotNull
-  private String email;
-  
-  @NotNull
-  private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+    
+    @NotNull
+    private String email;
+    
+    @NotNull
+    private String password;
+   
+    private String firstname;
+    private String lastname;
+    private Double weight;
+    private Integer height;
 
-  public User() { }
+    public User() {
+    }
 
-  public User(long id) { 
-    this.id = id;
-  }
-  
-  public User(String email, String name) {
-    this.email = email;
-    this.name = name;
-  }
+    public User(long id) {
+        this.id = id;
+    }
 
-  public long getId() {
-    return id;
-  }
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 
-  public void setId(long value) {
-    this.id = value;
-  }
+    public long getId() {
+        return id;
+    }
 
-  public String getEmail() {
-    return email;
-  }
-  
-  public void setEmail(String value) {
-    this.email = value;
-  }
-  
-  public String getName() {
-    return name;
-  }
+    public void setId(long value) {
+        this.id = value;
+    }
 
-  public void setName(String value) {
-    this.name = value;
-  }
-  
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String value) {
+        this.email = value;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    } 
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
+
+    public Integer getHeight() {
+        return height;
+    }
+
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+    
+    
+
 }

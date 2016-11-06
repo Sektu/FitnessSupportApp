@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import app.repositories.UserRepository;
 
 @Controller
-public class UserController {
+public class UserController { 
   @RequestMapping("/create")
   @ResponseBody
-  public String create(String email, String name) {
+  public String create(String email, String password) {
     User user = null;
     try {
-      user = new User(email, name);
+      user = new User(email, password);
       userRepository.save(user);
     }
     catch (Exception ex) {
@@ -55,11 +55,10 @@ public class UserController {
   
   @RequestMapping("/update")
   @ResponseBody
-  public String updateUser(long id, String email, String name) {
+  public String updateUser(long id, String email) {
     try {
       User user = userRepository.findOne(id);
       user.setEmail(email);
-      user.setName(name);
       userRepository.save(user);
     }
     catch (Exception ex) {
@@ -68,7 +67,7 @@ public class UserController {
     return "User succesfully updated!";
   }
   
-  @RequestMapping("/get-all-users-names")
+  @RequestMapping("/get-all-users-emails")
   @ResponseBody
   public List<String> getAllUsersNames() {
       List<String> response = new ArrayList<String>();
@@ -76,7 +75,7 @@ public class UserController {
       
       try {
           for(User u : users) {
-          response.add(u.getName());
+          response.add(u.getEmail());
             }
       }
       catch(Exception ex) {
