@@ -25,6 +25,7 @@ Najnowsza wersja aplikacji będzie deployowana tutaj:
 - https://dashboard.heroku.com/apps/fitnesssupportapp/deploy/heroku-git
 
 # Technologies:
+- Java 8
 - Spring JPA
 - Spring Hibernate
 - React
