@@ -13,6 +13,6 @@ public class UserInfoController {
     
     @Autowired
     private UserInfoRepository userInfoRepository;
-    
+       
     
 }
