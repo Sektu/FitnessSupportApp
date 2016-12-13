@@ -1,8 +1,8 @@
 # FitnessSupportApp
 
 Harmonogram pracy nad projektem:
-- zaprojektowanie bazy danych //
-- zmiana typu aplikacji na RESTful //
+- // zaprojektowanie bazy danych
+- // zmiana typu aplikacji na RESTful 
 - przetestowanie czy baza działa prawidłowo, dodanie obiektów do każdej tabeli - data zakończenia: [03.01.2017]
 - dodanie Kontrolerów i Repozytoriów dla każdej z klas Modelu - data zakończenia: [03.01.2017]
 - rejestracja i logowanie się użytkownika wraz z prostym formularzem - data zakończenia: [03.01.2017] ???
