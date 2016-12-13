@@ -2,11 +2,11 @@
 
 Harmonogram pracy nad projektem:
 - zaprojektowanie bazy danych //
-- przetestowanie czy baza działa prawidłowo, dodanie obiektów do każdej tabeli - data zakończenia: [13.12.2016]
-- dodanie Kontrolerów i Repozytoriów dla każdej z klas Modelu - data zakończenia: [13.12.2016]
-- rejestracja i logowanie się użytkownika wraz z prostym formularzem - data zakończenia: [13.12.2016] ???
+- przetestowanie czy baza działa prawidłowo, dodanie obiektów do każdej tabeli - data zakończenia: [03.01.2017]
+- dodanie Kontrolerów i Repozytoriów dla każdej z klas Modelu - data zakończenia: [03.01.2017]
+- rejestracja i logowanie się użytkownika wraz z prostym formularzem - data zakończenia: [03.01.2017] ???
 - utworzenie szkieletu części klienta tj. frontendu - data zakończenia: [03.01.2017]
-- rejestracja nowego użytkownika - data zakończenia: [01.01.2017]
+- rejestracja nowego użytkownika - data zakończenia: [03.01.2017]
 - logowanie się - data zakończenia: [03.01.2017]
 - tworzenie planu treningowego - data zakończenia: [17.01.2017]
 - dodawanie nowego cwiczenia do planu - data zakończenia: [17.01.2017]
