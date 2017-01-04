@@ -2,13 +2,13 @@ package app.controllers;
 
 import app.constants.Mappings;
 import app.models.User;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import app.repositories.UserRepository;
+import app.services.UserService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(Mappings.API + Mappings.USERS)
 public class UserController {
+    
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private UserRepository userRepository;
@@ -24,32 +27,13 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET, value = Mappings.USER_GET_ALL)
     @ResponseBody
     public List<String> getAllUsers() {
-        List<String> response = new ArrayList<String>();
-        List<User> users = userRepository.findAll();
-        
-        try {
-            for (User u : users) {
-                response.add(u.getEmail());
-            }
-        } catch (Exception ex) {
-            response.clear();
-            response.add("Error getting all users' names");
-            return response;
-        }
-        return response;
+        return userService.getAllUsers();
     }
     
     @RequestMapping(method = RequestMethod.GET, value = Mappings.USER_GET_BY_ID)
     @ResponseBody
-    public String getByEmail( @PathVariable("id") long id) {
-        String userEmail;
-        try {
-            User user = userRepository.findById(id);
-            userEmail = String.valueOf(user.getEmail());
-        } catch (Exception ex) {
-            return "User not found";
-        }
-        return "The user is: " + userEmail;
+    public String getById( @PathVariable("id") long id) {
+        return userService.getById(id);
     }
     
     @RequestMapping(method = RequestMethod.GET, value = Mappings.USER_GET_BY_EMAIL)

@@ -84,5 +84,9 @@ public class UserInfo {
         this.weight = weight;
     }
 
-    
+    @Override
+    public String toString() {
+        return "UserInfo{" + "id=" + id + ", age=" + age + ", firstName=" + firstName + ", lastName=" + lastName + ", height=" + height + ", weight=" + weight + '}';
+    }
+
 }
