@@ -17,4 +17,5 @@ public final class Mappings {
     
     public static final String USER_INFO_UPDATE = "/{userId}";
     public static final String USER_INFO_GET = "/{userId}";
+    public static final String USER_INFO_GET_ALL = "/";
 }

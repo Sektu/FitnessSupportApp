@@ -14,4 +14,5 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long>{
     public UserInfo findById(long id);
     public UserInfo findByFirstNameAndLastName(String firstName, String lastName);
     public List<UserInfo> findByAge(int age);
+    public List<UserInfo> findAll();
 }
