@@ -43,5 +43,48 @@ public class UserService {
         return "The user is: " + userEmail;
     }
     
+    public String getByEmail(String email) {
+        String userId;
+        try {
+            User user = userRepository.findByEmail(email);
+            userId = String.valueOf(user.getId());
+        } catch (Exception ex) {
+            return "User not found";
+        }
+        return "The user id is: " + userId;
+    }
+    
+    public String create(User user) {
+        try {
+            userRepository.save(user);
+        } 
+        catch (Exception ex) {
+            return "Error creating the user: " + ex.toString();
+        }
+        return "User succesfully created! (id = " + user.getId() + ")";
+    }
+    
+    public String delete(long id) {
+        try {
+            User user = new User(id);
+            userRepository.delete(user);
+        } 
+        catch (Exception ex) {
+            return "Error deleting the user: " + ex.toString();
+        }
+        return "User succesfully deleted!";
+    }
+    
+    public String update(long id, User user) {
+        try {
+            User tempUser = userRepository.findOne(id);
+            tempUser.setEmail(user.getEmail());
+            tempUser.setPassword(user.getPassword());
+            userRepository.save(tempUser);
+        } catch (Exception ex) {
+            return "Error updating the user: " + ex.toString();
+        }
+        return "User succesfully updated!";
+    }
     
 }
