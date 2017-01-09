@@ -1,8 +1,10 @@
 package app.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.sql.Date;
 import java.util.Objects;
 import java.util.Set;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -42,6 +44,7 @@ public class ExerciseStats {
         this.id = id;
     }
 
+    @Basic
     @Column(name = "exercise_date")
     public Date getExerciseDate() {
         return exerciseDate;
@@ -51,6 +54,8 @@ public class ExerciseStats {
         this.exerciseDate = exerciseDate;
     }
 
+    @Basic
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "exercise_fk")
     public Exercise getExercise() {
@@ -61,6 +66,8 @@ public class ExerciseStats {
         this.exercise = exercise;
     }
     
+    @Basic
+    @JsonIgnore
     @OneToMany(mappedBy = "exerciseStats")   
     public Set<ExerciseSet> getExerciseSets() {
         return exerciseSets;
@@ -98,6 +105,5 @@ public class ExerciseStats {
         }
         return true;
     }
-    
-    
+ 
 }

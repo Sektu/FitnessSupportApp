@@ -1,6 +1,8 @@
 package app.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Set;
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -45,6 +47,7 @@ public class User {
     }
 
     @NotNull
+    @Basic
     public String getEmail() {
         return email;
     }
@@ -54,6 +57,7 @@ public class User {
     }
 
     @NotNull
+    @Basic
     public String getPassword() {
         return password;
     }
@@ -62,6 +66,8 @@ public class User {
         this.password = password;
     }
 
+    @Basic
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     public UserInfo getUserInfo() {
@@ -72,6 +78,8 @@ public class User {
         this.userInfo = userInfo;
     }
 
+    @Basic
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     public Set<TrainingPlan> getTrainingPlans() {
         return trainingPlans;

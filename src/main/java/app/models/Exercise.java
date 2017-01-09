@@ -1,8 +1,10 @@
 package app.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.sql.Time;
 import java.util.Objects;
 import java.util.Set;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -51,6 +53,7 @@ public class Exercise {
         this.id = id;
     }
 
+    @Basic
     public String getName() {
         return name;
     }
@@ -59,6 +62,7 @@ public class Exercise {
         this.name = name;
     }
 
+    @Basic
     @Column(name = "sets_number")
     public int getSetsNumber() {
         return setsNumber;
@@ -68,6 +72,7 @@ public class Exercise {
         this.setsNumber = setsNumber;
     }
 
+    @Basic
     @Column(name = "reps_number")
     public int getRepsNumber() {
         return repsNumber;
@@ -77,6 +82,7 @@ public class Exercise {
         this.repsNumber = repsNumber;
     }
 
+    @Basic
     @Column(name = "endurance_time")
     public Time getEnduranceTime() {
         return enduranceTime;
@@ -86,6 +92,7 @@ public class Exercise {
         this.enduranceTime = enduranceTime;
     }
 
+    @Basic
     @Column(name = "break_time")
     public Time getBreakTime() {
         return breakTime;
@@ -95,6 +102,8 @@ public class Exercise {
         this.breakTime = breakTime;
     }
 
+    @Basic
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "training_fk")
     public Training getTraining() {
@@ -105,6 +114,8 @@ public class Exercise {
         this.training = training;
     }
 
+    @Basic
+    @JsonIgnore
     @OneToMany(mappedBy = "exercise")
     public Set<ExerciseStats> getExerciseStats() {
         return exerciseStats;
@@ -158,6 +169,10 @@ public class Exercise {
         }
         return true;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Exercise{" + "id=" + id + ", name=" + name + ", setsNumber=" + setsNumber + ", repsNumber=" + repsNumber + ", enduranceTime=" + enduranceTime + ", breakTime=" + breakTime + '}';
+    }
     
 }

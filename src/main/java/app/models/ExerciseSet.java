@@ -1,7 +1,9 @@
 package app.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.sql.Time;
 import java.util.Objects;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -41,6 +43,7 @@ public class ExerciseSet {
         this.id = id;
     }
 
+    @Basic
     @Column(name = "reps_number")
     public int getRepsNumber() {
         return repsNumber;
@@ -50,6 +53,7 @@ public class ExerciseSet {
         this.repsNumber = repsNumber;
     }
 
+    @Basic
     @Column(name = "endurance_time")
     public Time getEnduranceTime() {
         return enduranceTime;
@@ -59,6 +63,8 @@ public class ExerciseSet {
         this.enduranceTime = enduranceTime;
     }
 
+    @Basic
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "exercise_stats_fk")
     public ExerciseStats getExerciseStats() {
@@ -100,6 +106,11 @@ public class ExerciseSet {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "ExerciseSet{" + "id=" + id + ", repsNumber=" + repsNumber + ", enduranceTime=" + enduranceTime + '}';
     }
     
     

@@ -1,8 +1,10 @@
 package app.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.Objects;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -42,6 +44,7 @@ public class TrainingStats {
         this.id = id;
     }
 
+    @Basic
     @Column(name = "training_date")
     public Date getTrainingDate() {
         return trainingDate;
@@ -51,6 +54,7 @@ public class TrainingStats {
         this.trainingDate = trainingDate;
     }
 
+    @Basic
     @Column(name = "training_time")
     public Time getTrainingTime() {
         return trainingTime;
@@ -69,6 +73,8 @@ public class TrainingStats {
         return hash;
     }
 
+    @Basic
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "training_fk")
     public Training getTraining() {
@@ -102,5 +108,9 @@ public class TrainingStats {
         }
         return true;
     }
-    
+
+    @Override
+    public String toString() {
+        return "TrainingStats{" + "id=" + id + ", trainingDate=" + trainingDate + ", trainingTime=" + trainingTime + '}';
+    }
 }

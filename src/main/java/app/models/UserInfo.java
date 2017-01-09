@@ -1,5 +1,7 @@
 package app.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -42,6 +44,7 @@ public class UserInfo {
         this.id = id;
     }
     
+    @Basic
     public int getAge() {
         return age;
     }
@@ -50,6 +53,7 @@ public class UserInfo {
         this.age = age;
     }
 
+    @Basic
     @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
@@ -59,6 +63,7 @@ public class UserInfo {
         this.firstName = firstName;
     }
 
+    @Basic
     @Column(name = "last_name")
     public String getLastName() {
         return lastName;
@@ -68,6 +73,7 @@ public class UserInfo {
         this.lastName = lastName;
     }
 
+    @Basic
     public int getHeight() {
         return height;
     }
@@ -76,6 +82,7 @@ public class UserInfo {
         this.height = height;
     }
 
+    @Basic
     public int getWeight() {
         return weight;
     }

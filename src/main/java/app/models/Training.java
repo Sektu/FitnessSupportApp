@@ -1,7 +1,9 @@
 package app.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Objects;
 import java.util.Set;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -42,6 +44,7 @@ public class Training {
         this.id = id;
     }
 
+    @Basic
     public String getName() {
         return name;
     }
@@ -50,6 +53,8 @@ public class Training {
         this.name = name;
     }
 
+    @Basic
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "training_plan_fk")
     public TrainingPlan getTrainingPlan() {
@@ -60,6 +65,8 @@ public class Training {
         this.trainingPlan = trainingPlan;
     }
 
+    @Basic
+    @JsonIgnore
     @OneToMany(mappedBy = "training")
     public Set<Exercise> getExercises() {
         return exercises;
@@ -69,6 +76,8 @@ public class Training {
         this.exercises = exercises;
     }
 
+    @Basic
+    @JsonIgnore
     @OneToMany(mappedBy = "training")
     public Set<TrainingStats> getTrainingStats() {
         return trainingStats;
@@ -106,4 +115,9 @@ public class Training {
         }
         return true;
     }   
+
+    @Override
+    public String toString() {
+        return "Training{" + "id=" + id + ", name=" + name + '}';
+    }
 }
