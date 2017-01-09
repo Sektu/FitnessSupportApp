@@ -9,6 +9,7 @@ public final class Mappings {
     public static final String USER_INFO = "/user_info";
     public static final String TRAINING_PLAN = "/training_plan";
     public static final String TRAINING = "/training";
+    public static final String EXERCISE = "/exercise";
     
     public static final String USER_CREATE = "/";
     public static final String USER_DELETE = "/{id}/";
@@ -32,4 +33,10 @@ public final class Mappings {
     public static final String TRAINING_GET_ALL = "/";
     public static final String TRAINING_FOR_TRAINING_PLAN = "/{trainingPlanId}/";
     
+    public static final String EXERCISE_CREATE = "/{trainingId}/";
+    public static final String EXERCISE_DELETE = "/{id}/";
+    public static final String EXERCISE_UPDATE = "/{id}/";
+    public static final String EXERCISE_GET_ALL = "/";
+    public static final String EXERCISE_FOR_TRAINING = "/{trainingId}/";
+
 }

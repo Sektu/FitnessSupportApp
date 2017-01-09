@@ -39,9 +39,9 @@ public class TrainingService {
             trainingRepository.delete(id);
         }
         catch (Exception ex) {
-            return "Error in deleting new training id: " + id;
+            return "Error in deleting training id: " + id;
         }
-        return "Successfully deleted new training id: " + id;
+        return "Successfully deleted training id: " + id;
     }
 
     public String update(long id, Training training) {
@@ -51,9 +51,9 @@ public class TrainingService {
             trainingRepository.save(trainingTemp);
         }
         catch (Exception ex) {
-            return "Error in updating new training plan id: " + id;
+            return "Error in updating training id: " + id;
         }
-        return "Successfully updating new training plan id: " + id;
+        return "Successfully updating training id: " + id;
     }
 
     public Set<Training> getAllForTrainingPlan(long trainingPlanId) {
