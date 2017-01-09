@@ -2,7 +2,6 @@ package app.services;
 
 import app.models.User;
 import app.repositories.UserRepository;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
