@@ -22,22 +22,16 @@ public class UserController {
     
     @RequestMapping(method = RequestMethod.GET, value = Mappings.USER_GET_ALL)
     @ResponseBody
-    public List<String> getAllUsers() {
-        return userService.getAllUsers();
+    public List<User> getUsers() {
+        return userService.getUsers();
     }
     
     @RequestMapping(method = RequestMethod.GET, value = Mappings.USER_GET_BY_ID)
     @ResponseBody
-    public String getById( @PathVariable("id") long id) {
-        return userService.getById(id);
+    public User getUser( @PathVariable("id") long id) {
+        return userService.getUser(id);
     }
-    
-    @RequestMapping(method = RequestMethod.GET, value = Mappings.USER_GET_BY_EMAIL)
-    @ResponseBody
-    public String getByEmail(@PathVariable("email") String email) {
-        return userService.getByEmail(email);
-    }
-    
+        
     @RequestMapping(method = RequestMethod.POST, value = Mappings.USER_CREATE)
     @ResponseBody
     public String create(@RequestBody User user) {

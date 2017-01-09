@@ -17,43 +17,26 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     
-    public List<String> getAllUsers() {
-        List<String> response = new ArrayList<String>();
-        List<User> users = userRepository.findAll();
+    public List<User> getAllUsers() {
+        List<User> users;
         try {
-            for (User u : users) {
-                response.add(u.getEmail());
-            }
+            users = userRepository.findAll();
         } catch (Exception ex) {
-            response.clear();
-            response.add("Error getting all users' names");
-            return response;
+            return null;
         }
-        return response;
+        return users;
     }
     
-    public String getById(long id) {
-        String userEmail;
+    public User getUser(long id) {
+        User user;
         try {
-            User user = userRepository.findById(id);
-            userEmail = String.valueOf(user.getEmail());
+            user = userRepository.findById(id);
         } catch (Exception ex) {
-            return "User not found";
+            return null;
         }
-        return "The user is: " + userEmail;
+        return user;
     }
-    
-    public String getByEmail(String email) {
-        String userId;
-        try {
-            User user = userRepository.findByEmail(email);
-            userId = String.valueOf(user.getId());
-        } catch (Exception ex) {
-            return "User not found";
-        }
-        return "The user id is: " + userId;
-    }
-    
+        
     public String create(User user) {
         try {
             userRepository.save(user);

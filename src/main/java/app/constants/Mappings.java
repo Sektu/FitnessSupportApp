@@ -13,7 +13,6 @@ public final class Mappings {
     public static final String USER_DELETE = "/{id}";
     public static final String USER_GET_ALL = "/";
     public static final String USER_GET_BY_ID = "/id/{id}";
-    public static final String USER_GET_BY_EMAIL = "/email/{email}";
     public static final String USER_UPDATE = "/{id}";
     
     public static final String USER_INFO_UPDATE = "/{userId}";
