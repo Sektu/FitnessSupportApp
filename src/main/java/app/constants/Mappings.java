@@ -10,18 +10,18 @@ public final class Mappings {
     public static final String TRAINING_PLAN = "/training_plan";
     
     public static final String USER_CREATE = "/";
-    public static final String USER_DELETE = "/{id}";
+    public static final String USER_DELETE = "/{id}/";
     public static final String USER_GET_ALL = "/";
-    public static final String USER_GET_BY_ID = "/id/{id}";
-    public static final String USER_UPDATE = "/{id}";
+    public static final String USER_GET_BY_ID = "/{id}/";
+    public static final String USER_UPDATE = "/{id}/";
     
-    public static final String USER_INFO_UPDATE = "/{userId}";
-    public static final String USER_INFO_GET = "/{userId}";
+    public static final String USER_INFO_UPDATE = "/{userId}/";
+    public static final String USER_INFO_GET = "/{userId}/";
     public static final String USER_INFO_GET_ALL = "/";
     
-    public static final String TRAINING_PLAN_CREATE = "/{userId}";
-    public static final String TRAINING_PLAN_DELETE = "/{id}";
-    public static final String TRAINING_PLAN_UPDATE = "/{id}";
+    public static final String TRAINING_PLAN_CREATE = "/{userId}/";
+    public static final String TRAINING_PLAN_DELETE = "/{id}/";
+    public static final String TRAINING_PLAN_UPDATE = "/{id}/";
     public static final String TRAINING_PLAN_GET_ALL = "/";
-    public static final String TRAINING_PLAN_GET_ALL_BY_USERID = "/{userId}";
+    public static final String TRAINING_PLAN_GET_ALL_BY_USERID = "/{userId}/";
 }
