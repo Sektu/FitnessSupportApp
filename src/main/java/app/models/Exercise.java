@@ -1,7 +1,6 @@
 package app.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.sql.Time;
 import java.util.Objects;
 import java.util.Set;
 import javax.persistence.Basic;
@@ -23,8 +22,8 @@ public class Exercise {
     private String name;
     private int setsNumber;
     private int repsNumber;
-    private Time enduranceTime;
-    private Time breakTime;
+    private int enduranceTime;
+    private int breakTime;
     private Training training;
     private Set<ExerciseStats> exerciseStats;
 
@@ -35,7 +34,7 @@ public class Exercise {
         this.id = id;
     }
 
-    public Exercise(String name, int setsNumber, int repsNumber, Time enduranceTime, Time breakTime) {
+    public Exercise(String name, int setsNumber, int repsNumber, int enduranceTime, int breakTime) {
         this.name = name;
         this.setsNumber = setsNumber;
         this.repsNumber = repsNumber;
@@ -84,21 +83,21 @@ public class Exercise {
 
     @Basic
     @Column(name = "endurance_time")
-    public Time getEnduranceTime() {
+    public int getEnduranceTime() {
         return enduranceTime;
     }
 
-    public void setEnduranceTime(Time enduranceTime) {
+    public void setEnduranceTime(int enduranceTime) {
         this.enduranceTime = enduranceTime;
     }
 
     @Basic
     @Column(name = "break_time")
-    public Time getBreakTime() {
+    public int getBreakTime() {
         return breakTime;
     }
 
-    public void setBreakTime(Time breakTime) {
+    public void setBreakTime(int breakTime) {
         this.breakTime = breakTime;
     }
 

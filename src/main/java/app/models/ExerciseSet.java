@@ -1,7 +1,6 @@
 package app.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.sql.Time;
 import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -18,7 +17,7 @@ import javax.persistence.Table;
 public class ExerciseSet {
     private long id;
     private int repsNumber;
-    private Time enduranceTime;
+    private int enduranceTime;
     private ExerciseStats exerciseStats;
 
     public ExerciseSet() {
@@ -28,7 +27,7 @@ public class ExerciseSet {
         this.id = id;
     }
 
-    public ExerciseSet(int repsNumber, Time enduranceTime) {
+    public ExerciseSet(int repsNumber, int enduranceTime) {
         this.repsNumber = repsNumber;
         this.enduranceTime = enduranceTime;
     }
@@ -55,11 +54,11 @@ public class ExerciseSet {
 
     @Basic
     @Column(name = "endurance_time")
-    public Time getEnduranceTime() {
+    public int getEnduranceTime() {
         return enduranceTime;
     }
 
-    public void setEnduranceTime(Time enduranceTime) {
+    public void setEnduranceTime(int enduranceTime) {
         this.enduranceTime = enduranceTime;
     }
 

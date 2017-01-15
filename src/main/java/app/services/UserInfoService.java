@@ -1,5 +1,6 @@
 package app.services;
 
+import app.models.TrainingPlan;
 import app.models.User;
 import app.models.UserInfo;
 import app.repositories.UserInfoRepository;
@@ -66,6 +67,18 @@ public class UserInfoService {
             return response;
         }
         return response;
+    }
+
+    public String create(long userId, UserInfo userInfo) {
+        try {
+            User user = userRepository.findById(userId);
+            user.setUserInfo(userInfo);
+            userRepository.save(user);
+        }
+        catch (Exception ex) {
+            return "Error in creating new userinfo for user";
+        }
+        return "Successfully created new userinfo for user";
     }
     
 }

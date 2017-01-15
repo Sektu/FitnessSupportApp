@@ -30,6 +30,11 @@ public class UserInfoController {
     public String update(@PathVariable("userId") long userId, @RequestBody UserInfo userInfo) {
         return userInfoService.update(userId, userInfo);
     }  
+    
+    @RequestMapping(method = RequestMethod.POST, value = Mappings.USER_INFO_CREATE)
+    public String create(@PathVariable("userId") long userId, @RequestBody UserInfo userInfo) {
+        return userInfoService.create(userId, userInfo);
+    }  
 
     @RequestMapping(method = RequestMethod.GET, value = Mappings.USER_INFO_GET_ALL)
     public List<String> getAll() {

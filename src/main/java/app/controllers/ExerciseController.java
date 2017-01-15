@@ -2,9 +2,7 @@ package app.controllers;
 
 import app.constants.Mappings;
 import app.models.Exercise;
-import app.models.Training;
 import app.services.ExerciseService;
-import app.services.TrainingService;
 import java.util.List;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;

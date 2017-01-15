@@ -20,6 +20,7 @@ public final class Mappings {
     public static final String USER_INFO_UPDATE = "/{userId}/";
     public static final String USER_INFO_GET = "/{userId}/";
     public static final String USER_INFO_GET_ALL = "/";
+    public static final String USER_INFO_CREATE = "/{userId}/";
     
     public static final String TRAINING_PLAN_CREATE = "/{userId}/";
     public static final String TRAINING_PLAN_DELETE = "/{id}/";
